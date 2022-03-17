@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
       color="gray"
     >
       <Box paddingY="20px" height="100%">
-        <Box width="220px" marginBottom="20px" paddingX="20px">
+        <Box width="221px" marginBottom="20px" paddingX="20px">
           <NextImage src="/logo.svg" height={100} width={160} />
         </Box>
         <Box marginBottom="20px">
