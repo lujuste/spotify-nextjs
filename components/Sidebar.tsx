@@ -39,7 +39,7 @@ const Sidebar: React.FC = () => {
       width="100%"
       height="calc(100vh - 100px)"
       bg="black"
-      paddingX="5px"
+      paddingX="5.1px"
       color="gray"
     >
       <Box paddingY="20px" height="100%">
