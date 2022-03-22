@@ -33,6 +33,8 @@ const musicMenu = [
   { name: "Favorites", icon: MdFavorite, route: "/favorites" },
 ];
 
+const playlists = new Array(50).fill(1).map((_, i) => `playlist ${i + 1}`);
+
 const Sidebar: React.FC = () => {
   return (
     <Box
@@ -67,7 +69,7 @@ const Sidebar: React.FC = () => {
           </List>
         </Box>
 
-        <Box marginTop="20px" bg="gray.800">
+        <Box marginTop="20px">
           <List spacing={2}>
             {musicMenu.map((item) => (
               <ListItem paddingX="20px" fontSize="16px" key={item.name}>
@@ -87,10 +89,20 @@ const Sidebar: React.FC = () => {
             ))}
           </List>
         </Box>
-        <Divider />
-        <Box height="66%" overflow="auto" paddingY="20px">
+        <Divider mt="1rem" />
+        <Box height="56%" overflowY="auto" paddingY="20px">
           {new Array(50).fill(1).map(() => (
-            <h1>teste</h1>
+            <List spacing={2}>
+              {playlists.map((playlist) => (
+                <ListItem paddingX="20px" key={playlist}>
+                  <LinkBox>
+                    <NextLink href="/" passHref>
+                      <LinkOverlay>{playlist}</LinkOverlay>
+                    </NextLink>
+                  </LinkBox>
+                </ListItem>
+              ))}
+            </List>
           ))}
         </Box>
       </Box>
