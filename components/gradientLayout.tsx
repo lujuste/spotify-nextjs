@@ -1,5 +1,17 @@
 import { Flex, Box, Text } from "@chakra-ui/layout";
-import { Image } from "@chakra-ui/react";
+import { Image, SkeletonText } from "@chakra-ui/react";
+import { ReactNode } from "react";
+
+interface GradientProps {
+  children?: ReactNode;
+  color?: string;
+  image?: string;
+  subtitle?: string;
+  title?: string;
+  description?: string;
+  roundImage?: boolean;
+  isLoading?: any;
+}
 
 const GradientLayout = ({
   children,
@@ -9,7 +21,8 @@ const GradientLayout = ({
   title,
   description,
   roundImage,
-}) => {
+  isLoading,
+}: GradientProps) => {
   return (
     <Box
       height="100%"
@@ -28,9 +41,18 @@ const GradientLayout = ({
 
         <Box padding="20px" lineHeight="40px" color="white">
           <Text fontSize="sm" fontWeight="bold" casing="uppercase">
-            {subtitle}
+            {isLoading ? (
+              <SkeletonText mt="4" noOfLines={2} spacing="4" />
+            ) : (
+              subtitle
+            )}
           </Text>
-          <Text fontSize="6xl"> {title} </Text>
+          {isLoading ? (
+            <SkeletonText mt="4" noOfLines={2} spacing="4" />
+          ) : (
+            <Text fontSize="6xl"> {title} </Text>
+          )}
+
           <Text fontSize="x-small">{description}</Text>
         </Box>
       </Flex>

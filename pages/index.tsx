@@ -5,13 +5,14 @@ import { Image } from "@chakra-ui/react";
 import { useMe } from "../lib/hooks";
 
 export default function Home({ artists }) {
-  const { user } = useMe();
+  const { user, isLoading } = useMe();
 
   return (
     <GradientLayout
       roundImage
       color="red"
       subtitle="profile"
+      isLoading={isLoading}
       title={`${user?.firstName} ${user?.lastName}`}
       description={`${user?.playlistCount} public playlist`}
       image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"
