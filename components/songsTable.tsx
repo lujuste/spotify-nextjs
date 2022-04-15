@@ -7,8 +7,6 @@ import React from "react";
 import { formatDate, formatTime } from "../lib/formatters";
 import { useStoreActions } from "easy-peasy";
 
-// import { Container } from './styles';
-
 const SongsTable: React.FC<any> = ({ songs }) => {
   const playSongs = useStoreActions((store: any) => store.changeActiveSongs);
   const setActiveSong = useStoreActions((store: any) => store.changeActiveSong);

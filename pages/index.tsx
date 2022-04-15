@@ -1,14 +1,11 @@
-import Head from "next/head";
-
-import GradientLayout from "../components/gradientLayout";
 import { Box, Text, Flex } from "@chakra-ui/layout";
-import styles from "../styles/Home.module.css";
+import GradientLayout from "../components/gradientLayout";
 import prisma from "../lib/prisma";
 import { Image } from "@chakra-ui/react";
 import { useMe } from "../lib/hooks";
 
 export default function Home({ artists }) {
-  const { user, isLoading } = useMe();
+  const { user } = useMe();
 
   return (
     <GradientLayout

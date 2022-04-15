@@ -1,10 +1,7 @@
-import { Box, Flex, Text } from "@chakra-ui/layout";
-
 import React from "react";
-import Player from "./player";
+import { Box, Flex, Text } from "@chakra-ui/layout";
 import { useStoreState } from "easy-peasy";
-
-// import { Container } from './styles';
+import Player from "./player";
 
 const PlayerBar: React.FC = () => {
   const songs = useStoreState((state: any) => state.activeSongs);
