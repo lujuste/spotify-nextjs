@@ -39,7 +39,6 @@ const Player = ({ songs, activeSong }) => {
 
   useEffect(() => {
     let timerId;
-
     if (playing && !isSeeking) {
       const f = () => {
         setSeek(soundRef.current.seek());
